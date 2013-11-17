@@ -637,9 +637,15 @@ JsonIn::JsonIn(std::istream *s, bool strict) :
 }
 
 int JsonIn::tell() { return stream->tellg(); }
-void JsonIn::seek(int pos) { stream->seekg(pos); ate_separator = false; }
 char JsonIn::peek() { return (char)stream->peek(); }
 bool JsonIn::good() { return stream->good(); }
+
+void JsonIn::seek(int pos)
+{
+    stream->clear();
+    stream->seekg(pos);
+    ate_separator = false;
+}
 
 void JsonIn::eat_whitespace()
 {
@@ -955,6 +961,18 @@ double JsonIn::get_float()
     if (ch == '-') {
         neg = true;
         stream->get(ch);
+    } else if (ch != '.' && (ch < '0' || ch > '9')) {
+        // not a valid float
+        std::stringstream err;
+        err << "expecting number but found '" << ch << "'";
+        error(err.str(), -1);
+    }
+    if (strict && ch == '0') {
+        // allow a single leading zero in front of a '.' or 'e'/'E'
+        stream->get(ch);
+        if (ch >= '0' && ch <= '9') {
+            error("leading zeros not strictly allowed", -1);
+        }
     }
     while (ch >= '0' && ch <= '9') {
         i *= 10;

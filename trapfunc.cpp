@@ -71,7 +71,7 @@ void trapfuncm::beartrap(game *g, monster *z, int x, int y)
   z->add_effect(ME_BEARTRAP, rng(8, 15));
  }
  g->m.remove_trap(x, y);
- item beartrap(g->itypes["beartrap"], 0);
+ item beartrap(itypes["beartrap"], 0);
  z->add_item(beartrap);
 }
 
@@ -1017,9 +1017,6 @@ trap_id trap_id_from_string(std::string trap_name) {
   }
   if ("beartrap_buried" == trap_name) {
     return tr_beartrap_buried;
-  }
-  if ("snare" == trap_name) {
-    return tr_snare;
   }
   if ("nailboard" == trap_name) {
     return tr_nailboard;

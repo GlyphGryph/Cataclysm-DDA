@@ -99,8 +99,12 @@ item::item(itype *it, unsigned int turn, char let)
             it_tool* tool = dynamic_cast<it_tool*>(it);
             if (tool->max_charges == 0)
                 charges = -1;
-            else
+            else {
                 charges = tool->def_charges;
+                if (tool->ammo != "NULL") {
+                    curammo = dynamic_cast<it_ammo*>(item_controller->find_template(default_ammo(tool->ammo)));
+                }
+            }
         } else if (it->is_gunmod() && it->id == "spare_mag") {
             charges = 0;
         } else {
@@ -2092,6 +2096,15 @@ char item::pick_reload_ammo(player &u, bool interactive)
   am = u.has_ammo(ammo_type());
  }
 
+ // Check if the player is wielding ammo
+ if (g->u.is_armed() && g->u.weapon.is_ammo()){
+     // if it is compatible then include it.
+     it_ammo* w_ammo = dynamic_cast<it_ammo*>(u.weapon.type);
+     if (w_ammo->type == ammo_type())
+         am.push_back(&u.weapon);
+ }
+
+
  char am_invlet = 0;
 
  if (am.size() > 1 && interactive) {// More than one option; list 'em and pick
@@ -2143,6 +2156,12 @@ bool item::reload(player &u, char ammo_invlet)
  int max_load = 1;
  item *reload_target = NULL;
  item *ammo_to_use = (ammo_invlet != 0 ? &u.inv.item_by_letter(ammo_invlet) : NULL);
+
+ // also check if wielding ammo
+ if (ammo_to_use->is_null()) {
+     if (u.is_armed() && u.weapon.is_ammo() && u.weapon.invlet == ammo_invlet)
+         ammo_to_use = &u.weapon;
+ }
 
  // Handle ammo in containers, currently only gasoline
  if(ammo_to_use && ammo_to_use->is_container())
@@ -2253,6 +2272,9 @@ bool item::reload(player &u, char ammo_invlet)
       if (ammo_to_use->is_container())
       {
           ammo_to_use->contents.erase(ammo_to_use->contents.begin());
+      }
+      else if (u.weapon.invlet == ammo_to_use->invlet) {
+          u.remove_weapon();
       }
       else
       {
@@ -2386,4 +2408,52 @@ int item::getlight_emit(bool calculate_dimming) const {
         lumint = 10;
     }
     return lumint / 10;
+}
+
+// How much more of this liquid can be put in this container
+int item::get_remaining_capacity_for_liquid(const item &liquid, LIQUID_FILL_ERROR &error) const
+{
+    error = L_ERR_NONE;
+    if (!is_container()) {
+        error = L_ERR_NOT_CONTAINER;
+        return 0;
+    }
+
+    if (contents.empty()) {
+        if (!has_flag("WATERTIGHT")) { // invalid container types
+            error = L_ERR_NOT_WATERTIGHT;
+            return 0;
+        } else if (!has_flag("SEALS")) {
+            error = L_ERR_NOT_SEALED;
+            return 0;
+        }
+    } else { // Not empty
+        if (contents[0].type->id != liquid.type->id) {
+            error = L_ERR_NO_MIX;
+            return 0;
+        }
+    }
+
+    it_container *container = dynamic_cast<it_container *>(type);
+    int total_capacity = container->contains;
+
+    if (liquid.is_food()) {
+        it_comest *tmp_comest = dynamic_cast<it_comest *>(liquid.type);
+        total_capacity = container->contains * tmp_comest->charges;
+    } else if (liquid.is_ammo()) {
+        it_ammo *tmp_ammo = dynamic_cast<it_ammo *>(liquid.type);
+        total_capacity = container->contains * tmp_ammo->count;
+    }
+
+    int remaining_capacity = total_capacity;
+    if (!contents.empty()) {
+        remaining_capacity -= contents[0].charges;
+    }
+
+    if (remaining_capacity <= 0) {
+        error = L_ERR_FULL;
+        return 0;
+    }
+
+    return remaining_capacity;
 }
