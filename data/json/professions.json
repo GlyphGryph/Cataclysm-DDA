@@ -410,10 +410,11 @@
             {
                 "level": 3,
                 "name": "gun"
-            }
+            },
             {
                 "level": 3,
                 "name": "pistol"
+            }
         ],
         "items": [
             "pants_army",
@@ -423,7 +424,7 @@
             "boots",
             "holster",
             "m1911",
-            "45",
+            "45"
         ]
     },
     {
@@ -462,7 +463,7 @@
             "compbow",
             "arrow_cf",
             "knife_combat",
-            "hat_hunting",
+            "hat_hunting"
         ]
     },
     {
@@ -599,6 +600,93 @@
         "description": "You were in the middle of a nice shower when the cataclysm struck! You fled without so much as a towel.",
         "points": -1,
         "items": [
+        ]
+    },
+    {
+        "type" : "profession",
+        "ident": "bionic_thief",
+        "name": "Bionic Thief",
+        "description": "You have done many high profile heists, but your gains mean nothing in this world. All you have left is your bionic lockpick that you keep powered via batteries.",
+        "points": 2,
+        "CBMs":[
+            "bio_batteries",
+            "bio_lockpick",
+            "bio_power_storage_mkII"
+        ],
+        "items":[
+            "sunglasses",
+            "jeans",
+            "dress_shirt",
+            "dress_shoes"
+        ]
+    },
+    {
+        "type" : "profession",
+        "ident": "bionic_patient",
+        "name": "Bionic Patient",
+        "description": "Medical advances have saved your body from certain death. You are augmented with bionic muscles and sensors monitoring your blood powered by your own metabolism. Make the most of your second chance at life.",
+        "points": 3,
+        "CBMs":[
+            "bio_metabolics",
+            "bio_hydraulics",
+            "bio_blood_anal",
+            "bio_power_storage_mkII"
+        ],
+        "items":[
+            "jeans",
+            "tshirt",
+            "sneakers"
+        ]
+    },
+    {
+        "type" : "profession",
+        "ident": "bionic_spy",
+        "name": "Bionic Agent",
+        "description": "Your body has several bionics worth millions of dollars, paid for by public taxes. The government has turned you into an infiltration and recon specialist: you have night vision, an alarm and a hacking module powered by your own metabolism.",
+        "points": 3,
+        "CBMs":[
+            "bio_fingerhack",
+            "bio_alarm",
+            "bio_night_vision",
+            "bio_batteries",
+            "bio_power_storage_mkII"
+        ],
+        "items":[
+            "dress_shoes",
+            "suit"
+        ]
+    },
+    {
+        "type" : "profession",
+        "ident": "faulty_bionic",
+        "name": "Failed Android",
+        "description": "Your body is a wreck of bionic parts. You have a large capacity for power, but are filled with broken bionics. At least your ethanol power supply still works.",
+        "points": -2,
+        "CBMs":[
+            "bio_drain",
+            "bio_noise",
+            "bio_dis_acid",
+            "bio_dis_shock",
+            "bio_ethanol",
+            "bio_power_storage_mkII",
+            "bio_power_storage_mkII"
+        ],
+        "items":[
+            "sneakers",
+            "jeans",
+            "tshirt"
+        ]
+    },
+    {
+        "type" : "profession",
+        "ident" : "hitchhiker",
+        "name" : "Hitchhiker",
+        "description" : "Your house has been demolished and your planet destroyed, but at least you still have your towel.",
+        "points" : 0,
+        "items" : [
+            "house_coat",
+            "towel",
+            "guidebook"
         ]
     }
 ]
