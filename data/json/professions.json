@@ -308,7 +308,7 @@
             "flashlight",
             "shorts_cargo",
             "boots",
-            "boonie_hat",
+            "hat_boonie",
             "blazer",
             "tshirt",
             "socks",
@@ -424,7 +424,7 @@
             "boots",
             "holster",
             "m1911",
-            "45"
+            "45_acp"
         ]
     },
     {
@@ -483,8 +483,8 @@
             "boots_steel",
             "jeans",
             "hammer",
-            "nails",
-            "nails",
+            "nail",
+            "nail",
             "tool_belt"
         ]
     },
