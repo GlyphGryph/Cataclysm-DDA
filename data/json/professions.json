@@ -399,5 +399,206 @@
                 "type": "amphetamine"
             }
         ]
+    },
+    {
+        "type": "profession",
+        "ident": "cop",
+        "name": "Law Enforcement Officer",
+        "description": "Just a small-town deputy When you got the call, you were still ready to come to the rescue. Except that soon it was you who needed rescuing - you were lucky to escape with your life. Who's going to respect your authority when the government this badge represents might not even exist anymore?",
+        "points": 2,
+        "skills": [
+            {
+                "level": 3,
+                "name": "gun"
+            }
+            {
+                "level": 3,
+                "name": "pistol"
+        ],
+        "items": [
+            "pants_army",
+            "socks",
+            "badge_deputy",
+            "sheriffshirt",
+            "boots",
+            "holster",
+            "m1911",
+            "45",
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "salesman",
+        "name": "Used Car Salesman",
+        "description": "You've been accused of being the sort of guy who'd be willing to sell his own mother for a dollar. It always left you insulted - you've been around the block a time or two, and you'd charge way more than a dollar - and get it, too!",
+        "points": 0,
+        "skills": [
+            {
+                "level": 4,
+                "name": "barter"
+            }
+        ],
+        "items": [
+            "suit",
+            "dress_shoes"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "bow_hunter",
+        "name": "Bow Hunter",
+        "description": "Ever since you were a child you loved hunting, and you soon took a liking to the challenge of hunting with a bow. Why, if the world ended there's nothing you'd want at your side more than your trust bow. So when it did, you made made sure to bring it along.",
+        "points": 2,
+        "skills": [
+            {
+                "level": 2,
+                "name": "archery"
+            }
+        ],
+        "items": [
+            "army_top",
+            "boots_steel",
+            "pants_cargo",
+            "compbow",
+            "arrow_cf",
+            "knife_combat",
+            "hat_hunting",
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "construction_worker",
+        "name": "Handy Man",
+        "description": "You used to work at a local hardware store, and you did a lot of home renovations yourself. Now you look out at the horizon of a ruined world, and wonder - are your meager skills, and the few supplies you grabbed on the way out, sufficient to help it rebuild?",
+        "points": 1,
+        "skills": [
+            {
+                "level": 4,
+                "name": "carpentry"
+            }
+        ],
+        "items": [
+            "tank_top",
+            "boots_steel",
+            "jeans",
+            "hammer",
+            "nails",
+            "nails",
+            "tool_belt"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "lumberjack",
+        "name": "Lumberjack",
+        "description": "You're a lumberjack, and you're okay. You felled trees before before the world ended, but suspect the undead aren't nearly as tough.",
+        "points": 0,
+        "items": [
+            "jeans",
+            "boots",
+            "hat_hunting",
+            "jacket_flannel",
+            "ax"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "backpacker",
+        "name": "Backpacker",
+        "description": "You've travelled for a living, sightseeing here and there, and living off your parents' trust fund. But now they're gone, and the only thing between you and death is the open road and your backpack.",
+        "points": 0,
+        "items": [
+            "backpack_leather",
+            "jeans",
+            "sneakers",
+            "tshirt",
+            "socks",
+            "fun_survival"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "fastfoodcook",
+        "name": "Fast Food Cook",
+        "description": "You used to work at a fancy fast food joint a week ago, but now you show the meaning of \"fast\" food by running for your life.",
+        "points": 0,
+        "skills": [
+            {
+                "level": 1,
+                "name": "cooking"
+            }
+        ],
+        "items": [
+            "pants",
+            "sneakers",
+            "tshirt",
+            "socks",
+            "knife_steak"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "electrician",
+        "name": "Electrician",
+        "description": "You used to work for some small-time business owners doing minor electrical work, and you just so happened to be working on one of these jokes of an evac shelter when the cataclysm struck. Unfortunately, you didn't finish wiring anything up except the computer - fat lot of good it's doing you now.",
+        "points": 1,
+        "skills": [
+            {
+                "level": 3,
+                "name": "electronics"
+            }
+        ],
+        "items": [
+            "jumpsuit",
+            "boots",
+            "tool_belt",
+            "flashlight"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "hacker",
+        "name": "Computer Hacker",
+        "description": "Caffeine pills and all-nighters in front of a computer screen have given you skills in an area that seem, on the face of it, distinctly less-than-useful when the world has ended. You suppose you can't really get in trouble for fulfilling your dream of hacking into a military mainframe, now. That's a plus.",
+        "points": 1,
+        "skills": [
+            {
+                "level": 4,
+                "name": "computer"
+            }
+        ],
+        "items": [
+            "pants",
+            "tshirt",
+            "sneakers",
+            "portable_game"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "student",
+        "name": "Student",
+        "description": "You were a high school student, but you don't think you'll be needing to any more tests any time soon. There might even be something useful in one of these books you've been lugging around all year.",
+        "points": 1,
+        "items": [
+            "pants",
+            "tshirt",
+            "sneakers",
+            "ZSG",
+            "backpack",
+            "textbook_speech",
+            "story_book",
+            "howto_computer",
+            "novel_coa"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "svictim",
+        "name": "Shower Victim",
+        "description": "You were in the middle of a nice shower when the cataclysm struck! You fled without so much as a towel.",
+        "points": -1,
+        "items": [
+        ]
     }
 ]
