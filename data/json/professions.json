@@ -342,8 +342,8 @@
         "type": "profession",
         "ident": "crackhead",
         "name": "Crackhead",
-        "description": "Cocaine. It is, indeed, a helluva drug.",
-        "points": -2,
+        "description": "Cocaine. It is, indeed, a helluva drug. You blew your money on some dust, and before you knew it you were turning tricks behind the local CVS just to score one more line.",
+        "points": -1,
         "items": [
             "skirt",
             "heels",
@@ -365,7 +365,7 @@
         "ident": "homeless",
         "name": "Hobo",
         "description": "Society drove you to the fringes and set you wandering, with no home, no family, no friends, until you could only find solace in the bottom of a bottle. But society doesn't mean a thing anymore, and for all the crap thrown your way, you're still standing. God damn, you need a drink.",
-        "points": -2,
+        "points": -1,
         "items": [
             "pants",
             "whiskey",
@@ -388,10 +388,9 @@
         "ident": "tweaker",
         "name": "Tweaker",
         "description": "You're not entirely sure what happened, but everything has gone to shit, and the only thing running through your head is where you're gonna find your next hit.",
-        "points": -3,
+        "points": -2,
         "items": [
-            "pants",
-            "ref_lighter"
+            "pants"
         ],
         "addictions": [
             {
@@ -403,7 +402,7 @@
     {
         "type": "profession",
         "ident": "cop",
-        "name": "Law Enforcement Officer",
+        "name": "Cop",
         "description": "Just a small-town deputy When you got the call, you were still ready to come to the rescue. Except that soon it was you who needed rescuing - you were lucky to escape with your life. Who's going to respect your authority when the government this badge represents might not even exist anymore?",
         "points": 2,
         "skills": [
@@ -463,7 +462,8 @@
             "compbow",
             "arrow_cf",
             "knife_combat",
-            "hat_hunting"
+            "hat_hunting",
+            "quiver"
         ]
     },
     {
@@ -572,7 +572,9 @@
             "pants",
             "tshirt",
             "sneakers",
-            "portable_game"
+            "portable_game",
+            "mbag",
+            "laptop"
         ]
     },
     {
@@ -687,6 +689,164 @@
             "house_coat",
             "towel",
             "guidebook"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "trapper",
+        "name": "Trapper",
+        "description": "You spent most of your life trapping with your father. Both of you made a decent living off of your catches, and trapping tutorials. Hopefully, your skills will come in useful against less conventional game.",
+        "points": 1,
+        "skills": [
+            {
+                "level": 4,
+                "name": "traps"
+            }
+        ],
+        "items": [
+            "jeans",
+            "boots",
+            "hat_hunting",
+            "jacket_flannel",
+            "beartrap",
+            "pockknife",
+            "cig",
+            "matches"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "blacksmith",
+        "name": "Blacksmith",
+        "description": "You were going through your community college's metalsmithing program when the world ended. You ran into trouble coming out of class - but managed to keep ahold of the equipment you were carrying at the time..",
+        "points": 1,
+        "skills": [
+            {
+                "level": 4,
+                "name": "fabrication"
+            }
+        ],
+        "items": [
+            "jeans",
+            "boots",
+            "tank_top",
+            "apron_leather",
+            "fire_gauntlets",
+            "hammer"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "clown",
+        "name": "Clown",
+        "description": "All you ever wanted was to make people laugh. Dropping out of school and performing at kids' parties was a dream come true until the world ended. There's precious few balloon animals in your future now.",
+        "points": 0,
+        "items": [
+            "clown_suit",
+            "clownshoes"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "lost_sub",
+        "name": "Lost Submissive",
+        "description": "Early in the rush to safety, you were separated from your master by cruel fate. Now you are on your own with nothing to your name but a suit of really kinky black leather. Unfortunately, there's no safewords in the apocalypse.",
+        "points": 0,
+        "items": [
+            "bondage_suit",
+            "bondage_mask",
+            "boots"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "senior",
+        "name": "Senior Citizen",
+        "description": "You haven't seen this much blood since the war. The whole world's gone crazy! They ate your grandkids! But dagnabbit, you'll make them all pay for what they've done.",
+        "points": 0,
+        "items": [
+            "dress_shirt",
+            "pants_checkered",
+            "dress_shoes",
+            "cane",
+            "pocketwatch"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "cosplay",
+        "name": "Otaku",
+        "description": "Late nights with friends watching anime and eating snacks has prepared you for the premier anime convention in the Northeast.  It just had to be the day of the apocalypse.  At least you were ready in case your costume tore.",
+        "points": 4,
+        "items": [
+            "shorts",
+            "sneakers",
+            "tank_top",
+            "sewing_kit",
+            "mbag",
+            "fur_cat_ears",
+            "fur_cat_tail",
+            "fur_collar",
+            "cheeseburger"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "goalie",
+        "name": "Hockey Player",
+        "description": "You were a minor-league hockey goalie before the rest of your team became zombies. It's just you and your hockey equipment versus the undead, but at least you can cross-check them now.",
+        "points": 0,
+        "items": [
+            "mask_hockey",
+            "hockey_stick",
+            "jersey",
+            "pants",
+            "sneakers",
+            "puck"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "batter",
+        "name": "Baseball Player",
+        "description": "You were a batter on a local minor league team before the cataclysm. You escaped with your equipment, but how long can you survive until your innings are up?",
+        "points": 0,
+        "items": [
+            "bat",
+            "helmet_ball",
+            "dress_shirt",
+            "pants",
+            "cleats",
+            "baseball"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "linebacker",
+        "name": "Football Player",
+        "description": "You were the star player for the local football team, adored by teammates and fans alike. Now they just adore your brains. You've still got your bulky football gear on.",
+        "points": 0,
+        "items": [
+            "football_armor",
+            "tank_top",
+            "helmet_football",
+            "pants",
+            "cleats",
+            "football"
+        ]
+    },
+    {
+        "type": "profession",
+        "ident": "golfer",
+        "name": "Golfer",
+        "description": "A birdie is 1 under par, but how much is a zombie? Your clubhouse was overrun by the undead, and you fled with your trusty driving wedge.",
+        "points": 0,
+        "items": [
+            "hat_ball",
+            "dress_shirt",
+            "pants",
+            "sneakers",
+            "golf_club"
         ]
     }
 ]
